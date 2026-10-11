@@ -48,8 +48,7 @@ h1 { color: var(--yale-blue); font-size: clamp(48px, 5.7vw, 72px); font-weight: 
 .portrait img { width: 270px; height: auto; border-radius: 3px; }
 .contact-info { margin-top: 14px; font-size: 15px; font-style: normal; line-height: 1.5; white-space: nowrap; }
 .contact-label { color: var(--muted); }
-.contact-info a { text-decoration: none; }
-.contact-info a:hover { text-decoration: underline; }
+.contact-email { color: var(--yale-blue); }
 
 .section { padding-block: 30px 36px; border-top: 1px solid var(--rule); }
 .section-title { display: flex; align-items: center; gap: 23px; color: var(--yale-blue); font-size: 30px; font-weight: 600; line-height: 1.25; margin: 0 0 27px; }
@@ -63,6 +62,13 @@ h1 { color: var(--yale-blue); font-size: clamp(48px, 5.7vw, 72px); font-weight: 
 .paper-details strong { font-weight: 700; }
 .paper-links { display: inline; margin-left: 8px; }
 .paper-links a { display: inline-block; margin-right: 7px; white-space: nowrap; }
+
+.talk-list { list-style: none; padding: 0; margin: 0; }
+.talk-list > li { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 24px; margin-bottom: 25px; }
+.talk-list > li:last-child { margin-bottom: 0; }
+.talk-date { color: var(--muted); font-size: 17px; line-height: 1.55; padding-top: 1px; white-space: nowrap; }
+.talk-list h3 { margin: 0 0 3px; font-size: 20px; font-weight: 400; line-height: 1.4; }
+.talk-list p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.55; }
 
 .section-note { color: var(--muted); font-style: italic; margin: -14px 0 24px; font-size: 17px; }
 .courses { list-style: none; padding: 0; margin: 0; }
@@ -85,7 +91,7 @@ h1 { color: var(--yale-blue); font-size: clamp(48px, 5.7vw, 72px); font-weight: 
 @media (max-width: 640px) {
   html { scroll-padding-top: 18px; }
   .page-frame, .content { width: calc(100% - 40px); }
-  .navigation { min-height: 60px; gap: 22px; justify-content: center; font-size: 17px; }
+  .navigation { min-height: 60px; gap: clamp(10px, 3vw, 22px); justify-content: center; font-size: 17px; }
   .navigation a { padding-inline: 1px; }
   .navigation a[aria-current="location"]::after, .navigation a:hover::after { bottom: 9px; }
   .architecture { margin-top: 15px; height: 130px; }
@@ -101,6 +107,9 @@ h1 { color: var(--yale-blue); font-size: clamp(48px, 5.7vw, 72px); font-weight: 
   .papers h3 { font-size: 18px; }
   .paper-authors, .paper-details { font-size: 16px; }
   .paper-links { margin-left: 4px; }
+  .talk-list > li { grid-template-columns: minmax(0, 1fr); gap: 4px; margin-bottom: 24px; }
+  .talk-list h3 { font-size: 18px; }
+  .talk-date, .talk-list p { font-size: 16px; }
   .courses li { grid-template-columns: 1fr; gap: 3px; margin-bottom: 22px; }
   .courses h3 { font-size: 17px; }
   .section-note { margin-top: -12px; }
@@ -113,6 +122,6 @@ h1 { color: var(--yale-blue); font-size: clamp(48px, 5.7vw, 72px); font-weight: 
   .content, .page-frame { width: 100%; max-width: none; }
   .about { display: block; padding-top: 0; }
   h1 { font-size: 32pt; }
-  .papers > li, .courses li { break-inside: avoid; }
+  .papers > li, .talk-list > li, .courses li { break-inside: avoid; }
   .section-title { font-size: 19pt; }
 }
